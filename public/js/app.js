@@ -16,7 +16,7 @@ p2.textcontent = ''
 //fetching results from api
 weatherForm.addEventListener('submit',(e)=>{
     e.preventDefault()
-    const address = 'http://localhost:3000/weather?address=' + searchElement.value
+    const address = '/weather?address=' + searchElement.value
     fetch(address).then((response)=>{
     response.json().then((data)=>{
             if(searchElement.value==='')

@@ -7,10 +7,11 @@ const forcast = require('./utils/forcast.js')
 
 //creating our server using express 
 const app = express()
+const port = process.env.PORT || 3000
 
 //path to a directory in our file using path.join function
 const publicdirectorypath = path.join(__dirname,'../public');
-const partialsPath = path.join(__dirname,'/views/partials')
+const partialsPath = path.join(__dirname,'../views/partials')
 
 //handlebars set up
 app.set('view engine', 'hbs')
@@ -93,6 +94,6 @@ app.get('*',(req,res)=>{
 })
 
 //starting the server 
-app.listen(3000,()=>{
-    console.log('server is up on port 3000.')
+app.listen(port,()=>{
+    console.log('server is up on port' + port)
 })
