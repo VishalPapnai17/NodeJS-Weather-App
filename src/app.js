@@ -10,10 +10,12 @@ const app = express()
 
 //path to a directory in our file using path.join function
 const publicdirectorypath = path.join(__dirname,'../public');
+const viewsPath = path.join(__dirname,'../views')
 const partialsPath = path.join(__dirname,'../views/partials')
 
 //handlebars set up
 app.set('view engine', 'hbs')
+app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 //setup static directory to server
