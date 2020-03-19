@@ -1,15 +1,15 @@
-//importing pakages 
+//importing pakages
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode.js')
 const forcast = require('./utils/forcast.js')
 
-//creating our server using express 
+//creating our server using express
 const app = express()
 
 //path to a directory in our file using path.join function
-const publicdirectorypath = path.join(__dirname,'../public');
+const publicdirectorypath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../views')
 const partialsPath = path.join(__dirname,'../views/partials')
 
@@ -64,13 +64,13 @@ app.get('/weather',(req,res)=>{
             if(error)
             {
                 return res.send({error:error})
-            } 
+            }
             res.send({
                 location:data.location,
                 forcast:forcastData,
                 address:req.query.address
             })
-        })  
+        })
     })
 })
 
@@ -80,7 +80,7 @@ app.get('/products',(req,res)=>{
     })
 })
 
-//rendering error 404 page after /help 
+//rendering error 404 page after /help
 app.get('/help/*',(req,res)=>{
     res.render('error',{
         errormessage:'Help Article not Found'
@@ -94,7 +94,7 @@ app.get('*',(req,res)=>{
     })
 })
 
-//starting the server 
+//starting the server
 app.listen(process.env.PORT || 3000,()=>{
     console.log('server is up on port')
 })

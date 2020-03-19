@@ -13,7 +13,7 @@ const forcast = (latitude,longitude,callback)=>{
         }
         else
         {
-            callback(undefined,'its been ' + response.body.currently.temperature + ' degrees outside. Humidity is '+response.body.currently.humidity+' and there is '+response.body.currently.precipProbability+'% chance of rain.')
+            callback(undefined,'Its been ' + response.body.currently.temperature + ' degrees outside. Humidity is '+response.body.currently.humidity+'. The highest temperature could lead to '+response.body.daily.data[0].temperatureHigh+' degrees and lowest temperature could go to '+response.body.daily.data[0].temperatureLow+' degrees and there is '+response.body.currently.precipProbability+'% chance of rain.')
         }
     })
 }
