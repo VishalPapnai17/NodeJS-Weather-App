@@ -7,7 +7,6 @@ const forcast = require('./utils/forcast.js')
 
 //creating our server using express 
 const app = express()
-const port = process.env.PORT || 3000
 
 //path to a directory in our file using path.join function
 const publicdirectorypath = path.join(__dirname,'../public');
@@ -94,6 +93,6 @@ app.get('*',(req,res)=>{
 })
 
 //starting the server 
-app.listen(port,()=>{
-    console.log('server is up on port' + port)
+app.listen(process.env.PORT || 3000,()=>{
+    console.log('server is up on port')
 })
